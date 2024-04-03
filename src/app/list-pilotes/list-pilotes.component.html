@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="main-box clearfix">
+    <div class="table-responsive">
+    <table class="table user-list">
+    <thead>
+    <tr>
+    <th><span>Num Pilote</span></th>
+    <th><span>Nom Pilote</span></th>
+    <th class="text-center"><span>Adresse</span></th>
+    
+    <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pilote of this.listPilotes" (click)="getPilotenDetails(pilote.numPilote)"
+    
+    [ngClass]="{'hovered-row': isRowHovered}" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"
+    >
+    <td>
+        <i class="bi bi-airplane " ></i>
+    <a  class="user-link">{{pilote.numPilote}}</a>
+   
+    </td>
+    <td>
+        {{ pilote.nomPilote}}
+    </td>
+    <td class="text-center">
+    <span class="label label-default">{{ pilote.adresse}}</span>
+    </td>
+    
+    <td style="width: 20%;">
+    <a href="#" class="table-link">
+    <span class="fa-stack">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+    <a href="#" class="table-link">
+    <span class="fa-stack">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+    <a href="#" class="table-link danger">
+    <span class="fa-stack">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+    </td>
+    </tr>
+
